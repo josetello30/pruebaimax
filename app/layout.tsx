@@ -7,6 +7,7 @@ import './globals.css'
 const openSans = Open_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sans', // <-- Definimos la variable para Tailwind v4
   display: 'swap',
 })
 
