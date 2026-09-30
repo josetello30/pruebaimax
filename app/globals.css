@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -161,9 +162,15 @@
 }
 
 @layer base {
-  *, *::before, *::after {
-    font-family: var(--font-open-sans), sans-serif;
+  * { 
+    @apply border-border outline-ring/50; 
   }
-  html { scroll-behavior: smooth; }
-  body { @apply bg-background text-foreground; margin: 0; }
+  html, body { 
+    font-family: 'Open Sans', system-ui, sans-serif !important;
+    scroll-behavior: smooth; 
+  }
+  body { 
+    @apply bg-background text-foreground; 
+    margin: 0; 
+  }
 }
