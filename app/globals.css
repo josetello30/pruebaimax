@@ -161,7 +161,9 @@
 }
 
 @layer base {
-  * { @apply border-border outline-ring/50; }
+  *, *::before, *::after {
+    font-family: var(--font-open-sans), sans-serif;
+  }
   html { scroll-behavior: smooth; }
   body { @apply bg-background text-foreground; margin: 0; }
 }
