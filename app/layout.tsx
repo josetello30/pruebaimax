@@ -1,6 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Open_Sans } from 'next/font/google' // <-- 1. Importación
 import './globals.css'
+
+// <-- 2. Configuración de la fuente
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'IMAX Ingeniería Máxima | Excelencia que construye confianza',
@@ -39,8 +47,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="es">
+      {/* 3. Se aplica openSans.className al body */}
+      <body className={`${openSans.className} antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
